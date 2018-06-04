@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.11.3)
+cmake_minimum_required(VERSION 3.8.0)
 if (WIN32)
  option(CMAKE_USE_WIN32_THREADS_INIT "using WIN32 threads" ON)
 endif()
@@ -91,7 +91,7 @@ set(CMAKE_SUPPRESS_REGENERATION ON)
 # copy CTestCustom.cmake to build dir to disable long running tests in 'make test'
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/CTestCustom.cmake ${CMAKE_CURRENT_BINARY_DIR})
 
-project(cryptonote)
+project(catalyst)
 
 include_directories(include class src modules "${CMAKE_CURRENT_BINARY_DIR}/version")  
 
