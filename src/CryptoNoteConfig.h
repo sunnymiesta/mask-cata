@@ -49,7 +49,7 @@ const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DI
 const size_t   DIFFICULTY_WINDOW                             = 60; // blocks
 const size_t   DIFFICULTY_WINDOW_V2                          = 17; // blocks
 
-const uint64_t DEPOSIT_MIN_AMOUNT                            = 5000 * COIN;
+const uint64_t DEPOSIT_MIN_AMOUNT                            = 150 * COIN;
 const uint32_t DEPOSIT_MIN_TERM                              = 100000; // ~1 month
 const uint32_t DEPOSIT_MAX_TERM                              = 1 * 12 * 100000; // ~1 year
 const uint64_t DEPOSIT_MIN_TOTAL_RATE_FACTOR                 = 0; // rate is constant
