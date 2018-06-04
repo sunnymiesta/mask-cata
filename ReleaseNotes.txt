@@ -1,0 +1,21 @@
+Release notes 3.0
+
+- upload to github
+- added change for files
+- reset work
+
+Release notes 3.0.1
+
+- change cores
+- update setting
+- update rpc and blockindicies
+- added checkpoint
+  a. checkpoint cores
+  b. checkpoint payment_gate
+
+Release notes 3.0.2
+
+- checpoint added
+  - recover lost checkpoint
+  - updates new chain run and simple
+  - fixed chain
