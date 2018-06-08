@@ -7,18 +7,18 @@
 namespace CryptoNote {
 namespace parameters {
 
-const uint64_t DIFFICULTY_TARGET                             = 120; // seconds
+const uint64_t DIFFICULTY_TARGET                             = 60; // seconds
 const uint64_t CRYPTONOTE_MAX_BLOCK_NUMBER                   = 600000000;
 const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                = 600000000;
 const size_t   CRYPTONOTE_MAX_TX_SIZE                        = 1000000000;
-const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0x60d4; // addresses start with "CA"
+const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0x60ca; // addresses start with "AU"
 const size_t   CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 10;
 const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = DIFFICULTY_TARGET * 3;
 const uint64_t CRYPTONOTE_DEFAULT_TX_SPENDABLE_AGE           = 10;
 
 const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 11;
 
-const uint64_t MONEY_SUPPLY                                  = UINT64_C(21000000000);
+const uint64_t MONEY_SUPPLY                                  = UINT64_C(25000000000);
 
 //LWMA
 const size_t   MIN_MIXIN                          	     = 0;
@@ -26,7 +26,7 @@ const uint8_t  MANDATORY_MIXIN_BLOCK_VERSION                 = 0;
 const uint32_t MIXIN_START_HEIGHT                  	     = 0;
 const uint32_t MANDATORY_TRANSACTION                         = 0;
 const uint32_t KILL_HEIGHT                                   = 0;
-const uint64_t TAIL_EMISSION_REWARD                          = 10000;
+const uint64_t TAIL_EMISSION_REWARD                          = 500;
 const size_t   CRYPTONOTE_COIN_VERSION                       = 1;
 
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
@@ -35,25 +35,25 @@ const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2  = 1000000;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1  = 100000;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_CURRENT = CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE;
 const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
-const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 6;
+const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 4;
 
 // COIN - number of smallest units in one coin
 const uint64_t POINT                                         = UINT64_C(10000); // pow(10, 3)
 const uint64_t COIN                                          = UINT64_C(100000000); // pow(10, 6)
 const uint64_t MINIMUM_FEE                                   = UINT64_C(10000); // pow(10, 4)
 const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(10000); // pow(10, 4)
-const unsigned EMISSION_SPEED_FACTOR 			     		 = 18;
+const unsigned EMISSION_SPEED_FACTOR 			     		 = 24;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
 const size_t   DIFFICULTY_WINDOW                             = 60; // blocks
-const size_t   DIFFICULTY_WINDOW_V2                          = 17; // blocks
+const size_t   DIFFICULTY_WINDOW_V2                          = 150; // blocks
 
 const uint64_t DEPOSIT_MIN_AMOUNT                            = 150 * COIN;
-const uint32_t DEPOSIT_MIN_TERM                              = 100000; // ~1 month
+const uint32_t DEPOSIT_MIN_TERM                              = 22000; // ~1 month
 const uint32_t DEPOSIT_MAX_TERM                              = 1 * 12 * 100000; // ~1 year
 const uint64_t DEPOSIT_MIN_TOTAL_RATE_FACTOR                 = 0; // rate is constant
-const uint64_t DEPOSIT_MAX_TOTAL_RATE                        = 10; // percentage rate for DEPOSIT_MAX_TERM
+const uint64_t DEPOSIT_MAX_TOTAL_RATE                        = 20; // percentage rate for DEPOSIT_MAX_TERM
 static_assert(DEPOSIT_MIN_TERM > 0, "Bad DEPOSIT_MIN_TERM");
 static_assert(DEPOSIT_MIN_TERM <= DEPOSIT_MAX_TERM, "Bad DEPOSIT_MAX_TERM");
 static_assert(DEPOSIT_MIN_TERM * DEPOSIT_MAX_TOTAL_RATE > DEPOSIT_MIN_TOTAL_RATE_FACTOR, "Bad DEPOSIT_MIN_TOTAL_RATE_FACTOR or DEPOSIT_MAX_TOTAL_RATE");
@@ -78,8 +78,8 @@ const size_t   FUSION_TX_MAX_SIZE                            = CRYPTONOTE_MAX_TX
 const size_t   FUSION_TX_MIN_INPUT_COUNT                     = 12;
 const size_t   FUSION_TX_MIN_IN_OUT_COUNT_RATIO              = 4;
 
-const uint32_t UPGRADE_HEIGHT_V2                             = 9000000;
-const uint32_t UPGRADE_HEIGHT_V3                             = 19000000;
+const uint32_t UPGRADE_HEIGHT_V2                             = 1;
+const uint32_t UPGRADE_HEIGHT_V3                             = 2000000;
 const unsigned UPGRADE_VOTING_THRESHOLD                      = 90; // percent
 const uint32_t UPGRADE_VOTING_WINDOW                         = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY; // blocks
 const uint32_t UPGRADE_WINDOW                                = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY; // blocks
@@ -96,15 +96,15 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 
 } // parameters
 
-const uint64_t START_BLOCK_REWARD                            = (UINT64_C(15000) * parameters::POINT); //PoW reward
-const uint64_t ICO_BLOCK_REWARD	                             = (UINT64_C(840000000) * parameters::COIN); // 20.4 billion ICO
-const uint64_t MAX_BLOCK_REWARD                              = (UINT64_C(10000) * parameters::COIN); //PoS reward
+const uint64_t START_BLOCK_REWARD                            = (UINT64_C(1000) * parameters::POINT); //PoW reward
+const uint64_t ICO_BLOCK_REWARD	                             = (UINT64_C(50) * parameters::COIN); // 20.4 billion ICO
+const uint64_t MAX_BLOCK_REWARD                              = (UINT64_C(10) * parameters::COIN); //PoS reward
 const uint64_t REWARD_INCREASE_INTERVAL                      = (UINT64_C(264000));
 
-const char     CRYPTONOTE_NAME[]                             = "catalyst";
-const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff000180a3c347029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101b0d85134248c2315f1b75bba56884564d3a5f04f66d410047884a513e4befc58";
+const char     CRYPTONOTE_NAME[]                             = "adina";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff0001c0843d029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101b31f8d1ab9e7456d87113ac066fbbd1b4b48a018c8aeef3d994ea0351d155559";
 const uint32_t GENESIS_NONCE                                 = 70;
-const uint64_t GENESIS_TIMESTAMP                             = 1526949013;
+const uint64_t GENESIS_TIMESTAMP                             = 1528086815;
 
 const uint8_t  TRANSACTION_VERSION_1                         = 1;
 const uint8_t  TRANSACTION_VERSION_2                         = 2;
@@ -119,8 +119,8 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        = 10000; // by defa
 const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            = 128; // by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         = 1000;
 
-const int      P2P_DEFAULT_PORT                              = 6051;
-const int      RPC_DEFAULT_PORT                              = 6052;
+const int      P2P_DEFAULT_PORT                              = 15715;
+const int      RPC_DEFAULT_PORT                              = 15716;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                = 1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 = 5000;
@@ -138,8 +138,11 @@ const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000; // 5 second
 const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "F29507CA78955F37A3B783EE2C5123B8B6A34A0C5CAAE050922C62541614G090";
 
 const std::initializer_list<const char*> SEED_NODES = {
-  "seed1.catalyst.cash:6051",
-  "seed2.catalyst.cash:6051",
+    "144.217.150.133:15715",
+    "192.48.88.88:15715",
+    "node1.adina.host:15715",
+    "node2.adina.host:15715",
+    "node3.adina.host:15715",
 };
 
 struct CheckpointData {
