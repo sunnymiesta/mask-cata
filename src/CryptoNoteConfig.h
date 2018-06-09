@@ -106,7 +106,7 @@ const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff0001c084
 const uint32_t GENESIS_NONCE                                 = 70;
 const uint64_t GENESIS_TIMESTAMP                             = 1528086815;
 
-const uint8_t  TRANSACTION_VERSION_1                         = 1;
+const uint8_t  TRANSACTION_VERSION_1                         = 0;
 const uint8_t  TRANSACTION_VERSION_2                         = 2;
 const uint8_t  BLOCK_MAJOR_VERSION_1                         = 1;
 const uint8_t  BLOCK_MAJOR_VERSION_2                         = 2;
